@@ -4,7 +4,9 @@ namespace EliteFIPProtocol {
  
     public class StatusData {
 
-        public DateTime LastUpdate { get; set; }        
+        public DateTime LastUpdate { get; set; }
+        
+        // Flags
         public bool Docked { get; set; }
         public bool Landed { get; set; }
         public bool LandingGearDown { get; set; }
@@ -38,13 +40,35 @@ namespace EliteFIPProtocol {
         public bool FsdJump { get; set; }
         public bool SrvHighBeam { get; set; }
 
+
+        // Flags 2
+        public bool OnFoot { get; set; }
+        public bool InTaxi { get; set; }
+        public bool InMulticrew { get; set; }
+        public bool OnFootInStation { get; set; }
+        public bool OnFootOnPlanet  { get; set; }
+        public bool AimDownSight { get; set; }
+        public bool LowOxygen { get; set; }
+        public bool LowHealth { get; set; }
+        public bool Cold { get; set; }
+        public bool Hot { get; set; }
+        public bool VeryCold { get; set; }
+        public bool VeryHot { get; set; }
+        public bool GlideMode { get; set; }
+        public bool OnFootInHanger { get; set; }
+        public bool OnFootSocialSpace { get; set; }
+        public bool OnFootExterior { get; set; }
+        public bool BreathableAtmosphere { get; set; }
+
+
+        // Status
         public int SystemPips { get; set; }
         public int EnginePips { get; set; }
         public int WeaponPips { get; set; }
         public int FireGroup { get; set; }
         public string GuiFocus { get; set; }
         public double FuelMain { get; set; }
-        public double FuelResovoir { get; set; }
+        public double FuelReservoir { get; set; }
         public double Cargo { get; set; }
         public string LegalState { get; set; }
         public double Latitude { get; set; }
@@ -53,5 +77,15 @@ namespace EliteFIPProtocol {
         public double Heading { get; set; }
         public string BodyName { get; set; }
         public double PlanetRadius { get; set; }
+        public long Balance { get; set; }
+        public string DestinationSystem { get; set; }
+        public string DestinationBody { get; set; }
+        public string DestinationName { get; set; }
+        public double Oxygen { get; set; }
+        public double Health { get; set; }
+        public double Temperature { get; set; }
+        public string SelectedWeapon { get; set; }
+        public double Gravity { get; set; }
+
     }
 }
