@@ -1,8 +1,10 @@
 ﻿namespace EliteFIPProtocol {
 
-    public enum StateType {
+    public enum GameDataType {
         Status,
-        Target
+        Target,
+        Location,
+        Navigation        
     }
 
     public class GameData {
