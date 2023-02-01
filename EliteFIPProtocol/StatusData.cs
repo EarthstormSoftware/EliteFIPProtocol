@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 
 namespace EliteFIPProtocol {
  
@@ -86,6 +87,18 @@ namespace EliteFIPProtocol {
         public double Temperature { get; set; }
         public string SelectedWeapon { get; set; }
         public double Gravity { get; set; }
+
+        public static FIPPacket CreateFIPPacket(StatusData statusData) {
+
+            GameData gameData = new GameData();
+            gameData.Type = GameDataType.Status.ToString();
+            gameData.Data = JsonSerializer.Serialize(statusData);
+
+            FIPPacket packet = new FIPPacket();
+            packet.PacketType = PacketType.GameData.ToString();
+            packet.Payload = JsonSerializer.Serialize(gameData);
+            return packet;
+        }
 
     }
 }

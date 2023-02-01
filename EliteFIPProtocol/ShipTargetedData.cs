@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json;
 
  namespace EliteFIPProtocol {
     
@@ -40,6 +41,18 @@ using System;
         public long Bounty { get; set; }
         public string SubSystem { get; set; }
         public double SubSystemHealth { get; set; }
-        public string Power { get; set; }        
+        public string Power { get; set; }
+
+        public static FIPPacket CreateFIPPacket(ShipTargetedData shipTargetedData) {
+
+            GameData gameData = new GameData();
+            gameData.Type = GameDataType.Target.ToString();
+            gameData.Data = JsonSerializer.Serialize(shipTargetedData);
+
+            FIPPacket packet = new FIPPacket();
+            packet.PacketType = PacketType.GameData.ToString();
+            packet.Payload = JsonSerializer.Serialize(gameData);
+            return packet;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace EliteFIPProtocol {
         public DateTime LastUpdate { get; set; }
         public bool NavRouteActive { get; set; }
 
-        public List<NavRouteStop> Stops { get; set; }        
+        public List<NavRouteStop> Stops { get; set; } = new List<NavRouteStop>();       
 
         public class NavRouteStop {
             public string SystemId { get; set; }
