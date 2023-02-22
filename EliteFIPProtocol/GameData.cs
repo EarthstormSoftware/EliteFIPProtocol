@@ -4,7 +4,8 @@
         Status,
         Target,
         Location,
-        Navigation        
+        Navigation,
+        Jump
     }
 
     public class GameData {
