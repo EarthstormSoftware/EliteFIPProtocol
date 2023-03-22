@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 namespace EliteFIPProtocol {
     public class JumpData {
         public DateTime LastUpdate { get; set; }
+        public bool JumpComplete { get; set; }
         public string OriginSystemId { get; set; }
         public string OriginSystemName { get; set; }        
         public string DestinationSystemId { get; set; }
         public string DestinationSystemName { get; set; }
         public string DestinationSystemClass { get; set; }
-        public double JumpDistance { get; init; }
-        public double FuelUsed { get; init; }
+        public double JumpDistance { get; set; }
+        public double FuelUsed { get; set; }
 
         public static FIPPacket CreateFIPPacket(JumpData jumpData) {
 
